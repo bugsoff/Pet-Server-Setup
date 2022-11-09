@@ -10,7 +10,7 @@ function err {
 [[ $(id -u) -eq 0 ]] || err "Please run this script as root (sudo $0)"
 
 
-# SSH
+### SSH
 
 while true; do
 	read -r -p "Setup SSH access? [y/n]: " SETUP_SSH
@@ -35,14 +35,15 @@ else
 fi
 
 
+### VPN IKEv2
 
 
-# echo -e "\n\n--------[ VPN setup ]--------\n"
-# echo -e "You should to input a VPN user (may to change later)
-# and a new SSH user to login via SSH instead of root account (you can delete it later)"
-# wget https://raw.githubusercontent.com/jawj/IKEv2-setup/master/setup.sh -O ./ikev2-vpn-setup.sh
-# chmod u+x ikev2-vpn-setup.sh
-# ./ikev2-vpn-setup.sh
+echo -e "\n\n--------[ VPN setup ]--------\n"
+echo -e "You should to input a VPN user (may to change later)
+and a new SSH user to login via SSH instead of root account (you can delete it later)"
+wget https://raw.githubusercontent.com/jawj/IKEv2-setup/master/setup.sh -O ./ikev2-vpn-setup.sh
+chmod u+x ikev2-vpn-setup.sh
+./ikev2-vpn-setup.sh
 
 
 
